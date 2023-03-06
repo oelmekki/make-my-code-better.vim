@@ -60,7 +60,7 @@ a lot of code and it takes 30 seconds to complete.
 ChatGPT is limited to 4096 tokens per request (a token being usually a part
 of a word, but the token count on code can shoot up high fast). This
 includes the instructions, your code, and the answer of ChatGPT. Since we
-ask it to rewrite the code, if can be up to the same length than the code
+ask it to rewrite the code, it can be up to the same length than the code
 you provided (hopefully, it will be more concise than your code) and will
 include some explanations. For that reason, I limited the code you provide
 to 2000 tokens. You can tweak that number by setting the

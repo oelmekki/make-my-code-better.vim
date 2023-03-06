@@ -26,7 +26,7 @@ Finally, install the plugin using your favorite vim plugin manager, eg:
 ## Usage
 
 After that, you can use `:MakeMyCodeBetter` to run the plugin. This command
-accepts range, so you can just send one or two functions. Given the
+accepts a range, so you can just send one or two functions. Given the
 limitation in number of tokens, this will probably be your most common
 usage. You will be warned if you exceed the amount of tokens allowed, and
 no request will be performed.
@@ -51,7 +51,7 @@ variable:
 ## Limitations
 
 The plugin waits for the whole response to be provided by the api before
-displaying it, so you might but hanging for a while waiting for it. I could
+displaying it, so you might be hanging for a while waiting for it. I could
 have used the new vim-9.0 api to stream it, but I've never used that and
 I'm not even sure if it would work through python support. It was just not
 painful enough for me to investigate, just don't be surprised if you paste
@@ -59,9 +59,9 @@ a lot of code and it takes 30 seconds to complete.
 
 ChatGPT is limited to 4096 tokens per request (a token being usually a part
 of a word, but the token count on code can shoot up high fast). This
-include the instructions, your code, and the answer of ChatGPT. Since we
+includes the instructions, your code, and the answer of ChatGPT. Since we
 ask it to rewrite the code, if can be up to the same length than the code
-you provided (hopefully, it will be more concise than your code) and
+you provided (hopefully, it will be more concise than your code) and will
 include some explanations. For that reason, I limited the code you provide
 to 2000 tokens. You can tweak that number by setting the
 `g:make_my_code_better_max_tokens` variable.

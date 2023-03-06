@@ -19,6 +19,10 @@ which you can set up in your vimrc file:
 
     let g:open_ai_key="<your-key>"
 
+Finally, install the plugin using your favorite vim plugin manager, eg:
+
+    Plugin "oelmekki/make-my-code-better.vim"
+
 ## Usage
 
 After that, you can use `:MakeMyCodeBetter` to run the plugin. This command

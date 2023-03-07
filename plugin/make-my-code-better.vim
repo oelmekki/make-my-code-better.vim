@@ -98,7 +98,7 @@ token_length = sum(len(tiktoken.get_encoding("gpt2").encode(message["content"]))
 if token_length > MAX_REQUEST_LEN:
   content = f"Selected code is too big : {token_length} tokens, while we allow a maximum of {MAX_REQUEST_LEN} tokens. You can use range selection to reduce that amount, by visually selecting a chunk of code and using :'<,'>MakeMyCodeBetter on it."
 else:
-  max_tokens_for_answer = 2000 - token_length
+  max_tokens_for_answer = MAX_REQUEST_LEN - token_length
   content = fetch(messages, max_tokens_for_answer)
 
 show(content)

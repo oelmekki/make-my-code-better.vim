@@ -22,6 +22,10 @@ user_max = None
 if vim.eval("exists('g:make_my_code_better_max_tokens')") == "1":
   user_max = int(vim.eval('g:make_my_code_better_max_tokens'))
 
+MODEL = "gpt-3.5-turbo"
+if vim.eval("exists('g:make_my_code_better_model')") == "1":
+  MODEL = vim.eval('g:make_my_code_better_model')
+
 # ChatGPT accepts 4096 tokens, which includes the instructions and the request.
 # So we allow 2000 tokens max in the request, otherwise answer would be
 # truncated.
@@ -30,7 +34,7 @@ MAX_REQUEST_LEN = user_max or 2000
 
 def fetch(messages, max_tokens_for_answer):
   query = {
-    "model": "gpt-3.5-turbo",
+    "model": MODEL,
     "messages": messages,
     "temperature": 0.5,
     "max_tokens": max_tokens_for_answer,

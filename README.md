@@ -48,6 +48,17 @@ variable:
       \ I''m going to show you my code. You''re going to say you found a way to
       \ make it more performant, and you will rewrite my code in C.'
 
+
+You can also change the model used and the max amount of tokens:
+
+    let g:make_my_code_better_model="gpt-3.5-turbo-16k"
+    let g:make_my_code_better_max_tokens="8000"
+
+The token max value is the maximum number of tokens _in the user request_.
+This is what allow the script to warn you you're asking for too much
+without even firing a request (and thus waiting for a response). A good
+value is half the context size of the model.
+
 ## Limitations
 
 The plugin waits for the whole response to be provided by the api before
